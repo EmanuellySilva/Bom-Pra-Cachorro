@@ -1,44 +1,23 @@
 @startuml
 
-:Usuário: as U
-:Sistema: as S
 
-S -> (Cadastrar_usuário)
-U -> (Iformar_login)
+
+:Usuário: as U
+
+
+U -up-> (Cadastrar)
+U --left--> (Logar)
+U ----> (Adicionar informações)
+U ----> (Pesquisar amigos)
+U ----> (Adicionar amigo)
+U ---down---> (Trocar mensagens privadas com amigo)
+U ------> (Visualizar histórico de mensagens)
+U --right--> (Desazer amizade)
+U ----> (Publicar textos com no máximo 140 caracteres)
+U ----> (Permitir que o texto publicado seja privado ou público)
+U ----> (Realizar buscas acerca de viagens, restaurantes ou outros pontos da cidade)
 
 
 
 
 @enduml
-
-:Cliente: as C
-:Sistema: as S
-
-C ---> (Conta_corrente)
-C ->(Conta_poupança)
-C --> (Dependentes)
-Dependentes --> (Conta_poupança)
-Conta_poupança ---> (Valor)
-Conta_poupança ---> (Prazo de aplicação a uma taxa de juros)
-Conta_poupança -> (Histórico)
-Conta_corrente --> (Histórico)
-Histórico --> (Crédito)
-Histórico --> (Débito)
-Histórico --> (Transferências)
-Histórico --> (Aplicações)
-Conta_corrente --> (Aplicações_pré_fixadas)
-Histórico -> (Aplicações_pré_fixadas)
-Aplicações_pré_fixadas -> (Aplicação de um valor em um prazo pré-determinado a uma taxa de juros previamente definida)
-
-S --> (Cadastrar novo cliente)
-S --> (Excluir ou editar cliente)
-S --> (Cadastrar dependente)
-S --> (Excluir ou editar dependente)
-S --> (Abrir conta corrente)
-S --> (Fechar conta corrente)
-S --> (Abrir poupança)
-S --> (Fechar poupança)
-S --> (Movimentar conta corrente)
-S --> (Aplicar em pré-fixados)
-S --> (Consultar histórico de conta corrente ou poupança)
-S --> (C)
