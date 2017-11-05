@@ -1,0 +1,62 @@
+@startuml
+
+class Usuario{
+    str  nome
+    int  idade
+    str  email
+    str profissao
+    str  senha
+
+    logar()
+    adicinarAmigo()
+    buscarAmigo()
+    excluirAmigo()
+    conversarComAmigo()
+    criarPostPrivado()
+    criarPostPublico()
+    adicionarFoto()
+
+    int getidade()
+    setidade(int NovaIdade)
+    setnome(str NovoNome)
+    setsenha(str NovaSenha)
+    setprofissao(str NovaProfissao)
+    str getemail()
+    str getprpfissao()
+    str getnome()
+    list Mensagem()
+    list Grupo()
+
+}
+Mensagem "N"---"N" Usuario
+
+class Mensagem{
+    str conteudo
+    str assunto
+    privado()
+    guardarMensagemTrocadaEntreUsuarios()
+    email(USUARIO)
+
+}
+
+class Post{
+    str conteudo
+    str assunto
+    restringePostDoUsuarioPara140Caracter()
+    adicionarlocalizacao()
+    permitirQueUsuarioRealizeBuscaNoPost()
+    email(USUARIO)
+
+}
+Mensagem "N"---"N" Grupo
+Grupo "1..N"---"N" Usuario
+
+class Grupo{
+    str conteudo
+    str assunto
+    guardarMensagemTrocadaEntreUsuarios()
+    list Mensagem()
+}
+Usuario "1"---"N" Post
+
+@enduml
