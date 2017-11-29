@@ -1,6 +1,7 @@
 class Usuario:
-    def __init__(self, nome, idade, email, profissao, senha):
+    def __init__(self, nome, sobrenome, idade, email, profissao, senha):
         self.nome = nome
+        self.sobrenome = sobrenome
         self.idade = idade
         self.email = email
         self.profissao = profissao
@@ -42,15 +43,11 @@ class Usuario:
                 return amigo
         return None
 
-    def logar(self, email, senha):
-        if self.email == email and self.senha == senha:
-            print('Logado com sucesso!')
-            print(self.menuUsuario())
 
     def menuUsuario(self):
         opcao = 0
         while opcao != 8:
-            print('****** Bom Pra Cachorro ******')
+            print('****** Feed Cachorro ******')
             print('1 - Adicionar Amigo')
             print('2 - Excluir Amigo')
             print('3 - Mostrar Amigos')
@@ -59,43 +56,50 @@ class Usuario:
             print('6 - Mudar profissão')
             print('7 - Mudar Senha')
             print('8 - Sair')
-            opcao = int(input('Digite a opção:'))
+            print('9 - Meu perfil')
+            opcao = int(input('Digite a opção: '))
 
             if opcao == 1:
-                email_amigo = input('Informe o email de seu amigo')
+                email_amigo = input('Informe o email de seu amigo: ')
                 self.adicionarAmigo(email_amigo)
 
             if opcao == 2:
-                emailAmigo = input('Informe o email de seu amigo')
+                emailAmigo = input('Informe o email de seu amigo: ')
                 self.excluirAmigo(emailAmigo)
 
             if opcao == 3:
                 self.imprime_amigos()
 
             if opcao == 4:
-                NovoNome = input('Informe o novo nome')
+                NovoNome = input('Informe o novo nome: ')
                 self.set_nome(NovoNome)
 
             if opcao == 5:
-                NovaIdade = input('Informe o nova idade')
+                NovaIdade = input('Informe o nova idade: ')
                 self.set_nome(NovaIdade)
 
             if opcao == 6:
-                NovaProfissao = input('Informe o nova profissão')
+                NovaProfissao = input('Informe o nova profissão: ')
                 self.set_nome(NovaProfissao)
 
             if opcao == 7:
-                NovaSenha = input('Informe o novoa senha')
+                NovaSenha = input('Informe o novoa senha: ')
                 self.set_nome(NovaSenha)
 
             if opcao == 8:
-                print("******Obrigado por usar nosso site!******")
+                print("******Até logo!******")
+
+            if opcao == 9:
+                print('****Meu perfil****')
+                print('E-mail:',self.email)
+                print('Nome:',self.nome)
+                print('Idade:',self.idade)
+                print('Profissão:',self.profissao)
 
     def adicionarAmigo(self, NovoAmigo):
         self.amigos.append(NovoAmigo)
 
     def excluirAmigo(self, email):
-        amigo = self.buscarAmigo(email)
         self.amigos.remove(email)
 
     def imprime_amigos(self):
