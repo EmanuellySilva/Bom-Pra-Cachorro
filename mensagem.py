@@ -3,5 +3,5 @@ from sistema import SistemaBomPraCachorro
 from post import Post
 
 class Mensagem:
-  def _init_(self):
+  def __init__(self):
     pass

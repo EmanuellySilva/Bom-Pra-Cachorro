@@ -1,5 +1,5 @@
 class Usuario:
-    def _init_(self, nome, idade, email, profissao, senha):
+    def __init__(self, nome, idade, email, profissao, senha):
         self.nome = nome
         self.idade = idade
         self.email = email
@@ -46,11 +46,9 @@ class Usuario:
         if self.email == email and self.senha == senha:
             print('Logado com sucesso!')
             print(self.menuUsuario())
-            # Aqui eu tentei confirmar que o email e a senha eram corretas e se fosse ele iria printar na tela um segundo menu. Que deveria ser a interface grafica, porem como não tem ficara asim
 
     def menuUsuario(self):
         opcao = 0
-        # Aqui é o basico. Provavelmente todas funcionam ja que fizemos elas faz tempo
         while opcao != 'x':
             print('****** Bom Pra Cachorro ******')
             print('1 - Adicionar Amigo')

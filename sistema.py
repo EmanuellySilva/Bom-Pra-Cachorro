@@ -2,7 +2,7 @@ from usuario import Usuario
 
 
 class SistemaBomPraCachorro:
-    def _init_(self):
+    def __init__(self):
         self.usuarios = list()
 
     def menu(self):
@@ -12,16 +12,16 @@ class SistemaBomPraCachorro:
             print('****** Bom Pra Cachorro ******')
             print('1 - Cadastrar-se')
             print('2 - Logar')
-            # print('3 - Listar Usuarios')
+            print('3 - Listar Usuarios')
             print('4 - Sair')
-            opcao = int(input('Digite a opção:'))
+            opcao = int(input('Digite a opcao:'))
 
             if opcao == 1:
                 nome = input('Digite seu nome: ')
                 sobrenome = input('Digite seu sobrenome: ')
                 idade = int(input('Digite sua idade:'))
                 email = input('Digite seu e-mail: ')
-                profissao = input("informe sua profissao:")
+                profissao = input("informe sua profissao: ")
                 senha = input('Digite sua senha: ')
                 self.cadastrar_usuario(nome, idade, email, profissao, senha)
 
@@ -39,3 +39,10 @@ class SistemaBomPraCachorro:
     def cadastrar_usuario(self, nome, idade, email, profissao, senha):
         usuario = Usuario(nome, idade, email, profissao, senha)
         self.usuarios.append(usuario)
+
+    def logar(self, email, senha):
+        for usuario in self.usuarios:
+            if email != usuario.email and senha != usuario.senha:
+                print("E-mail ou senha incorretos. Por favor, tente novamente")
+            else:
+                print("Logado com sucesso!")
