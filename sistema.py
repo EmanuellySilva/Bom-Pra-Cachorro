@@ -1,8 +1,4 @@
 from usuario import Usuario
-from post import Post
-from mensagem import mensagem
-
-usuario = Usuario()  # aui eu chamei ele globalmente pra poder chamar ele no def la em baixo
 
 
 class SistemaBomPraCachorro:
@@ -43,11 +39,3 @@ class SistemaBomPraCachorro:
     def cadastrar_usuario(self, nome, idade, email, profissao, senha):
         usuario = Usuario(nome, idade, email, profissao, senha)
         self.usuarios.append(usuario)
-
-    def logar(self, email, senha):
-        while email != usuario.email and senha != usuario.senha:  # chamei ela aqui, tá tudo ok por enquanto
-            print("E-mail ou senha incorretos. Por favor, tente novamente")
-        print("Logado com sucesso!")
-
-    def imprime_cliente(self):
-        print(self.usuarios)
