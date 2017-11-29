@@ -49,7 +49,7 @@ class Usuario:
 
     def menuUsuario(self):
         opcao = 0
-        while opcao != 'x':
+        while opcao != 8:
             print('****** Bom Pra Cachorro ******')
             print('1 - Adicionar Amigo')
             print('2 - Excluir Amigo')
@@ -58,7 +58,7 @@ class Usuario:
             print('5 - Mudar Idade')
             print('6 - Mudar profissão')
             print('7 - Mudar Senha')
-            print('x - Sair')
+            print('8 - Sair')
             opcao = int(input('Digite a opção:'))
 
             if opcao == 1:
@@ -88,7 +88,7 @@ class Usuario:
                 NovaSenha = input('Informe o novoa senha')
                 self.set_nome(NovaSenha)
 
-            if opcao == 'x':
+            if opcao == 8:
                 print("******Obrigado por usar nosso site!******")
 
     def adicionarAmigo(self, NovoAmigo):

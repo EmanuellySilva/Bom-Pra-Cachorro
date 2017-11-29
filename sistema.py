@@ -8,12 +8,11 @@ class SistemaBomPraCachorro:
     def menu(self):
         opcao = 0
 
-        while opcao != 4:
+        while opcao != 3:
             print('****** Bom Pra Cachorro ******')
             print('1 - Cadastrar-se')
             print('2 - Logar')
-            print('3 - Listar Usuarios')
-            print('4 - Sair')
+            print('3 - Sair')
             opcao = int(input('Digite a opcao:'))
 
             if opcao == 1:
@@ -31,9 +30,6 @@ class SistemaBomPraCachorro:
                 self.logar(email, senha)
 
             if opcao == 3:
-                self.imprime_cliente()
-
-            if opcao == 4:
                 print("******Obrigado por usar nosso site!******")
 
     def cadastrar_usuario(self, nome, idade, email, profissao, senha):
@@ -46,3 +42,4 @@ class SistemaBomPraCachorro:
                 print("E-mail ou senha incorretos. Por favor, tente novamente")
             else:
                 print("Logado com sucesso!")
+
